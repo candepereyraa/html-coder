@@ -1,0 +1,19 @@
+setInterval(()=>{
+    let itemMenuTextMobile = document.querySelectorAll('.vtex-store-link-0-x-link--hidden-menu')
+    itemMenuTextMobile.forEach((item) => {
+        if (item.childNodes[0].innerHTML === undefined){
+            item.parentElement.style = "display:none;"
+        } else{
+            item.parentElement.style = "display:block;text-align:left;"
+        }
+    })
+},100)
+
+setInterval(()=>{
+    let itemMenuText = document.querySelectorAll(".vtex-menu-2-x-menuItem--hidden-menu .vtex-menu-2-x-styledLinkContent--hidden-menu")
+    itemMenuText.forEach((item) => {
+        if (item.textContent === ""){
+            item.parentElement.parentElement.parentElement.style = "display:none;"
+        }
+    })
+},100)

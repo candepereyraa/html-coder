@@ -1,0 +1,886 @@
+//LOGICA PARA REDIRECCION EN EVENTOS
+
+// function redirectToCyberMonday() {
+//     const allowedIPs = [
+//       "192.168.0.161",
+//       "181.92.162.43",
+//       "181.28.166.176",
+//       "186.137.219.53",
+//       "181.117.224.34",
+//       "186.141.201.140",
+//       "192.168.0.14",
+//       "181.92.163.99",
+//       "190.191.190.134",
+//       "186.152.245.30",
+//       "200.73.186.234",
+//       "192.168.0.63",
+//       "190.55.22.157",
+//       "190.193.172.218",
+//       "192.168.0.63",
+//     ];
+
+//     const dateCyberMondayStart = new Date("2023-11-05T18:00:00-03:00");
+//     const dateCyberMondayEnd = new Date("2023-11-05T23:00:00-03:00");
+
+//     fetch("https://api.ipify.org?format=json")
+//       .then((response) => response.json())
+//       .then((getIp) => {
+//         const ipObtenida = getIp.ip;
+//         const currentDate = new Date();
+//         const currentURL = window.location.href;
+//         var is_root = location.pathname == "/";
+//         if (
+//           !allowedIPs.includes(ipObtenida) &&
+//           currentDate >= dateCyberMondayStart &&
+//           currentDate <= dateCyberMondayEnd &&
+//           is_root
+//         ) {
+//           window.location.href = "http://cybermonday.47street.com.ar/";
+//         } else if (
+//           currentDate >= dateCyberMondayEnd &&
+//           !allowedIPs.includes(ipObtenida) &&
+//           is_root
+//         ) {
+//           window.location.href = "https://www.47street.com.ar/cybermonday";
+//         }
+//       });
+//   }
+
+// FIN LOGICA PARA REDIRECCION EN EVENTOS
+
+// WIDGET WISE
+
+setInterval(() => {
+    //redirectToCyberMonday(); // LLAMAMOS A LA FUNCION QUE VERIFICA LAS IP
+
+    if (screen.width > 992) {
+        let btnChat = document.querySelector(
+            ".vtex-menu-2-x-menuItem--pastilla-chat"
+        );
+        if (btnChat) {
+            btnChat.addEventListener("click", function () {
+                _wcchat.showApp();
+            });
+        }
+    } else {
+        let pastillaMob = document.querySelector(
+            ".vtex-rich-text-0-x-container--chat-app"
+        );
+        if (pastillaMob) {
+            pastillaMob.addEventListener("click", function () {
+                _wcchat.showApp();
+            });
+        }
+    }
+}, 500);
+
+// FIN WIDGET WISE
+
+//CAMBIO DE TEXTOS EN FACILITADOR DE FICHA PARA EVENTOS
+
+// function changeShippingText() {
+//   const shippingInfo = document.querySelector(
+//     ".vtex-rich-text-0-x-paragraph--envio-moto"
+//   );
+
+//   const dateNow = new Date();
+//   if (
+//     (dateNow >= new Date("2023-11-06T00:00:00-03:00") &&
+//       dateNow < new Date("2023-11-10T00:00:00-03:00")) ||
+//     dateNow >= new Date("2023-11-13T00:00:00-03:00")
+//   ) {
+//     shippingInfo.innerHTML =
+//       "<strong>ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¿Sos de CABA o GBA?</strong> Recibilo dentro de las 48hs comprando hoy!";
+//   } else if (
+//     dateNow >= new Date("2023-11-10T00:00:00-03:00") &&
+//     dateNow < new Date("2023-11-13T00:00:00-03:00")
+//   ) {
+//     shippingInfo.innerHTML =
+//       "<strong>ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¿Sos de CABA o GBA?</strong> Recibilo entre el 13/11 y 14/11 comprando hoy!";
+//   }
+// }
+
+// FIN CAMBIO DE TEXTOS EN FACILITADOR DE FICHA PARA EVENTOS
+
+const CODIGOS_POSTALES = [
+    1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013,
+    1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026,
+    1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039,
+    1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052,
+    1053, 1054, 1055, 1056, 1057, 1058, 1059, 1060, 1061, 1062, 1063, 1064, 1065,
+    1066, 1067, 1068, 1069, 1070, 1071, 1072, 1073, 1074, 1075, 1076, 1077, 1078,
+    1079, 1080, 1081, 1082, 1083, 1084, 1085, 1086, 1087, 1088, 1089, 1090, 1091,
+    1091, 1092, 1093, 1094, 1095, 1096, 1097, 1098, 1099, 1100, 1101, 1102, 1103,
+    1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115, 1116,
+    1117, 1118, 1119, 1120, 1121, 1122, 1123, 1124, 1125, 1126, 1127, 1128, 1129,
+    1130, 1131, 1132, 1133, 1134, 1135, 1136, 1137, 1138, 1139, 1140, 1141, 1141,
+    1142, 1143, 1144, 1145, 1146, 1147, 1148, 1149, 1150, 1151, 1152, 1152, 1153,
+    1154, 1155, 1156, 1157, 1158, 1159, 1160, 1161, 1162, 1163, 1164, 1165, 1166,
+    1167, 1168, 1169, 1170, 1171, 1172, 1173, 1174, 1175, 1176, 1177, 1178, 1179,
+    1180, 1181, 1182, 1183, 1184, 1185, 1186, 1186, 1187, 1188, 1189, 1190, 1191,
+    1192, 1193, 1194, 1195, 1196, 1197, 1198, 1199, 1200, 1201, 1202, 1203, 1204,
+    1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212, 1213, 1214, 1215, 1216, 1217,
+    1218, 1219, 1220, 1221, 1222, 1223, 1224, 1225, 1226, 1227, 1228, 1229, 1230,
+    1231, 1232, 1233, 1234, 1235, 1236, 1237, 1238, 1239, 1240, 1241, 1242, 1243,
+    1244, 1245, 1246, 1247, 1248, 1249, 1250, 1251, 1252, 1253, 1254, 1255, 1256,
+    1256, 1257, 1258, 1258, 1259, 1260, 1261, 1262, 1263, 1264, 1265, 1266, 1267,
+    1268, 1269, 1270, 1271, 1272, 1273, 1274, 1275, 1276, 1277, 1278, 1279, 1280,
+    1281, 1282, 1283, 1284, 1285, 1286, 1287, 1288, 1289, 1290, 1291, 1292, 1293,
+    1294, 1295, 1296, 1297, 1298, 1299, 1405, 1406, 1407, 1408, 1413, 1414, 1416,
+    1417, 1419, 1421, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1437, 1439,
+    1440, 1458, 1602, 1603, 1604, 1605, 1606, 1607, 1609, 1612, 1616, 1636, 1638,
+    1640, 1641, 1642, 1643, 1650, 1651, 1653, 1655, 1657, 1657, 1667, 1672, 1674,
+    1676, 1678, 1682, 1683, 1684, 1684, 1685, 1686, 1688, 1702, 1703, 1704, 1706,
+    1708, 1712, 1747, 1751, 1752, 1754, 1761, 1766, 1768, 1773, 1821, 1822, 1824,
+    1825, 1826, 1828, 1829, 1831, 1832, 1834, 1835, 1836, 1839, 1870,
+];
+
+// let contadorCP = 0;
+function counterFicha() {
+    const AHORA = new Date();
+    const MEDIO_DIA = new Date();
+    MEDIO_DIA.setHours(12, 0, 0, 0); // 12:00 PM
+
+    const NOCHE = new Date();
+    NOCHE.setHours(23, 59, 0, 0); // 11:59 PM
+
+    const DIA = AHORA.getDay(); // 6 -> sábados y 0 -> domingos
+
+    // Calcula la diferencia en milisegundos entre AHORA y MEDIO_DIA
+    let diferenciaMilisegundos = MEDIO_DIA - AHORA;
+
+    if (diferenciaMilisegundos < 0) {
+        diferenciaMilisegundos += 24 * 60 * 60 * 1000; // Añade 24 horas si la diferencia es negativa
+    }
+
+    // Convierte la diferencia en horas y minutos
+    const DIF_HORAS = Math.floor(diferenciaMilisegundos / (1000 * 60 * 60));
+    const DIF_MINUTOS = Math.floor((diferenciaMilisegundos % (1000 * 60 * 60)) / (1000 * 60));
+
+    const envioMoto = document.querySelector(
+        ".vtex-rich-text-0-x-paragraph--envio-moto"
+    );
+    if (!envioMoto) return;
+
+    if (DIA !== 6 && DIA !== 0) {
+        if (AHORA < NOCHE && AHORA < MEDIO_DIA) {
+            envioMoto.innerHTML = `<strong>¿Sos de CABA o GBA?</strong> Recibilo hoy comprando dentro de la próxima <strong>${DIF_HORAS} h ${DIF_MINUTOS} min!</strong>`;
+        } else if (DIA === 5 && AHORA >= MEDIO_DIA) {
+            envioMoto.innerHTML = `<strong>¿Sos de CABA o GBA?</strong> Recibilo el lunes comprando hoy!`;
+        } else {
+            envioMoto.innerHTML = `<strong>¿Sos de CABA o GBA?</strong> Recibilo mañana comprando hoy!`;
+        }
+    } else {
+        //DIA === 6 ES SABADO
+        if (DIA === 6 && AHORA > MEDIO_DIA && AHORA < NOCHE) {
+            envioMoto.innerHTML = `<strong>¿Sos de CABA o GBA?</strong> Recibilo el lunes comprando hoy!`;
+        }
+        //DIA === 0 ES DOMINGO
+        if (DIA === 0 && AHORA > MEDIO_DIA && AHORA < NOCHE) {
+            envioMoto.innerHTML = `<strong>¿Sos de CABA o GBA?</strong> Recibilo mañana comprando hoy!`;
+        }
+    }
+
+
+
+    //PARA VERIFICAR EL CODIGO POSTAL DE JIPINK
+    let botonVerificar = document.querySelector(
+        ".vtex-store-components-3-x-buttonContainer--form-CP .vtex-button"
+    );
+    if (botonVerificar) {
+        botonVerificar.addEventListener("click", postalCodeVerification);
+    }
+}
+
+function postalCodeVerification(ev) {
+    let userCP = document.querySelector(
+        ".vtex-store-components-3-x-inputGroup--form-CP .vtex-styleguide-9-x-input"
+    ).value; // --> aca tomamos el valor del input con el codigo postal que ingresa el usuario
+    let numberCP = parseInt(userCP); // --> parseamos a numero
+
+    if (CODIGOS_POSTALES.includes(numberCP)) {
+        document.querySelector(
+            ".vtex-store-components-3-x-form--form-CP"
+        ).style.display = "none";
+        let node_contenedor = document.querySelector(
+            ".vtex-store-components-3-x-container--form-CP"
+        );
+        let createDiv = document.createElement("div");
+        createDiv.innerHTML = `
+                                        <p class='vtex-store-components-3-x-success-response1'>Yeah!</p>
+                                        <p class='vtex-store-components-3-x-success-response-2'>Tu CP esta dentro del area de cobertura para envío rápido con moto</p>
+                                        <p class='vtex-store-components-3-x-success-face'>😃</p>
+                                        `;
+        node_contenedor.setAttribute(
+            "div",
+            "vtex-store-components-3-x-container-success"
+        );
+        node_contenedor.appendChild(createDiv);
+    } else {
+        document.querySelector(
+            ".vtex-store-components-3-x-form--form-CP"
+        ).style.display = "none";
+        let node_contenedor = document.querySelector(
+            ".vtex-store-components-3-x-container--form-CP"
+        );
+        let createDiv = document.createElement("div");
+        createDiv.innerHTML = `
+                                        <p class='vtex-store-components-3-x-failed-response1'>Oops!</p>
+                                        <p class='vtex-store-components-3-x-failed-response-2'>Tu CP esta fuera del area de cobertura para envío rápido con moto</p>
+                                        <p class='vtex-store-components-3-x-failed-face'>😔</p>
+                                        `;
+        node_contenedor.setAttribute(
+            "div",
+            "vtex-store-components-3-x-container-failed"
+        );
+        node_contenedor.appendChild(createDiv);
+    }
+}
+
+//FIN DE VERIFICACION DE CODIGO POSTAL DE JIPINK
+
+function chargeSite() {
+    // redirectToCyberMonday();
+    setInterval(() => {
+        // changeShippingText(); -> cambio de textos en facilitador de envios para eventos.
+        counterFicha();
+    }, 800);
+}
+
+window.onload = chargeSite();
+
+setInterval(() => {
+    //     if(screen.width>992){
+    //             let btnChat = document.querySelector(".vtex-menu-2-x-menuItem--pastilla-chat");
+    //             if(btnChat){
+    //                     btnChat.addEventListener("click",function(){
+    //                     _wcchat.show();
+    //             })
+    //             }
+    //     }else{
+    //             let pastillaMob = document.querySelector('.vtex-rich-text-0-x-container--chat-app');
+    //             if(pastillaMob){
+    //                     pastillaMob.addEventListener("click",function(){
+    //                     _wcchat.show();
+    //             })
+    //             }
+    //     }
+
+    let kitLookExist = document.querySelector(
+        ".vtex-flex-layout-0-x-flexRow--kitlook-pdp-container"
+    );
+
+    if (kitLookExist) {
+        let sliderRight = document.querySelectorAll(".swiper-caret-next");
+        let sliderLeft2 = document.querySelectorAll(".swiper-caret-prev");
+
+        sliderRight.forEach((element) => {
+            element.addEventListener("click", function (e) {
+                e.stopImmediatePropagation();
+                let sliderTarget = e.target;
+                sliderTarget.style.pointerEvents = "none";
+            });
+        });
+
+        sliderLeft2.forEach((element) => {
+            element.addEventListener("click", function (e) {
+                let sliderTarget = e.target;
+                var prevSibling = sliderTarget.previousElementSibling;
+                if (prevSibling.style.pointerEvents == "none") {
+                    prevSibling.style.pointerEvents = "initial";
+                }
+            });
+        });
+
+        let buyButton = document.querySelector(
+            ".vtex-add-to-cart-button-0-x-buttonDataContainer-final"
+        );
+
+        if (!buyButton) {
+            document
+                .querySelector(".vtexbr-kitlook-INw6b45Gx8vjUwlo5BVBS")
+                ?.classList.add("vtex-add-to-cart-button-0-x-buttonDataContainer-final");
+        }
+        let priceMobile = document.querySelectorAll(
+            ".vtexbr-kitlook-3FIT5oLmMSdfJvI4Fkjbbn .undefined"
+        );
+        priceMobile.forEach((element) => {
+            element.style.display = "block";
+        });
+    }
+
+    if (document.querySelector(".vtex-account__page-body ul li span.link")) {
+        document.querySelector(
+            ".vtex-account__page-body ul li span.link"
+        ).style.display = "none";
+    }
+
+    let finishClose = 0;
+
+    let login = document.querySelector(".vtex-login-2-x-box");
+    let cruz = document.querySelector(
+        ".vtex-login-2-x-content--loginOptions-closeLogin"
+    );
+
+    if (login && !cruz) {
+        finishClose += 1;
+        if (finishClose === 1) {
+            let closeLogin = document.createElement("div");
+            closeLogin.innerHTML =
+                "<span class='vtex-login-2-x-content--loginOptions-closeLogin'>X</span>";
+            login.appendChild(closeLogin);
+
+            closeLogin.addEventListener("click", (event) => {
+                document.querySelector(
+                    ".vtex-login-2-x-portalContainer"
+                ).style.display = "none";
+            });
+        }
+    }
+}, 500);
+
+// Boton de ver mas en sabana
+
+setInterval(() => {
+    let galleryShelf = document.querySelector("#gallery-layout-container");
+
+    if (galleryShelf) {
+        let viewMoreBtn = document.querySelector(
+            ".vtex-flex-layout-0-x-flexRow--mostrar-mas"
+        );
+
+        function viewMoreClick(entradas, observador) {
+            entradas.forEach((entrada) => {
+                if (entrada.isIntersecting) {
+                    document
+                        .querySelector(
+                            ".vtex-flex-layout-0-x-flexRow--mostrar-mas .vtex-button"
+                        )
+                        .addEventListener("click", (event) => event.preventDefault());
+
+                    document
+                        .querySelector(
+                            ".vtex-flex-layout-0-x-flexRow--mostrar-mas .vtex-button"
+                        )
+                        .click();
+
+                    document
+                        .querySelector(
+                            ".vtex-flex-layout-0-x-flexRow--mostrar-mas .vtex-button"
+                        )
+                        .setAttribute("disabled", "");
+
+                    document.querySelector(
+                        ".vtex-flex-layout-0-x-flexRow--spinner"
+                    ).style.visibility = "visible";
+                } else {
+                    document.querySelector(
+                        ".vtex-flex-layout-0-x-flexRow--spinner"
+                    ).style.visibility = "hidden";
+                }
+            });
+        }
+
+        let btnObserver = new IntersectionObserver(viewMoreClick, {
+            root: null,
+            rootMargin: "0px 0px 0px 0px",
+            threshold: 0,
+        });
+
+        btnObserver.observe(viewMoreBtn);
+    }
+}, 3000);
+
+// SABANA DARKMODE PARA DESKTOP Y MOBILE
+setInterval(() => {
+    if (screen.width > 1025) {
+        let btnSwitch = document.querySelector(
+            ".vtex-flex-layout-0-x-flexCol--darkMode-Col"
+        );
+
+        btnSwitch && btnSwitch.addEventListener("click", function (e) {
+            e.stopImmediatePropagation();
+
+            btnSwitch.classList.toggle(
+                "vtex-flex-layout-0-x-flexCol--darkMode-Col-active"
+            );
+            //     let btnactive = document.querySelector(".vtex-search-result-3-x-galleryLayoutOptionButton--selected")
+
+            if (
+                btnSwitch.classList.contains(
+                    "vtex-flex-layout-0-x-flexCol--darkMode-Col-active"
+                )
+            ) {
+                localStorage.setItem("dark-mode", "true");
+
+                document.querySelector(".vtex-login-2-x-profileIcon").style.color =
+                    "#FFFF"; //icono de login
+                document.querySelector(".vtex-store-icons-0-x-cartIcon").style.color =
+                    "#FFFF"; // icono de carrito
+                document
+                    .querySelector(".vtex-search-result-3-x-gallery")
+                    .classList.toggle("vtex-search-result-3-x-gallery-dark"); // sabana
+                document
+                    .querySelector(".vtex-flex-layout-0-x-flexRowContent--searchInfoBox")
+                    .classList.toggle(
+                        "vtex-flex-layout-0-x-flexRowContent--searchInfoBox-dark"
+                    ); //filtros
+
+                document
+                    .querySelector(".vtex-store-drawer-0-x-drawer--filter-search-test")
+                    .classList.toggle(
+                        "vtex-store-drawer-0-x-drawer--filter-search-test-dark"
+                    ); //filtros
+
+                document
+                    .querySelector(
+                        ".vtex-flex-layout-0-x-flexCol--header-desktop-not-home"
+                    )
+                    .classList.toggle(
+                        "vtex-flex-layout-0-x-flexCol--header-desktop-not-home-dark"
+                    ); //header
+
+                let classObserve = document.querySelector(
+                    ".vtex-store-footer-2-x-footerLayout"
+                );
+
+                function changeClass(entradas, observador) {
+                    entradas.forEach((entrada) => {
+                        if (entrada.isIntersecting) {
+                            document
+                                .querySelector(
+                                    ".vtex-flex-layout-0-x-flexRowContent--facilitadores-footer"
+                                )
+                                .classList.toggle(
+                                    "vtex-flex-layout-0-x-flexRowContent--facilitadores-footer-dark"
+                                );
+                        }
+                    });
+                }
+
+                let observer = new IntersectionObserver(changeClass, {
+                    root: null,
+                    rootMargin: "0px 0px 0px 0px",
+                    threshold: 0,
+                });
+
+                observer.observe(classObserve);
+
+                document
+                    .querySelector(
+                        ".vtex-flex-layout-0-x-flexRowContent--container-sabana"
+                    )
+                    .classList.toggle(
+                        "vtex-flex-layout-0-x-flexRowContent--container-sabana-dark"
+                    ); //sabana
+                document
+                    .querySelector(
+                        ".vtex-flex-layout-0-x-flexRowContent--content-row-sabana"
+                    )
+                    .classList.toggle(
+                        "vtex-flex-layout-0-x-flexRowContent--content-row-sabana-dark"
+                    ); //sabana
+
+                let banner = document.querySelector(
+                    ".vtex-search-2-x-searchBanner--myBanner"
+                );
+                if (banner) {
+                    document
+                        .querySelector(".vtex-search-2-x-searchBanner--myBanner")
+                        .classList.toggle("vtex-search-2-x-searchBanner--myBanner-dark"); //banner
+                }
+            } else {
+                localStorage.setItem("dark-mode", "false");
+
+                document.querySelector(".vtex-login-2-x-profileIcon").style.color =
+                    "#000";
+                document.querySelector(".vtex-store-icons-0-x-cartIcon").style.color =
+                    "#000";
+                document
+                    .querySelector(".vtex-search-result-3-x-gallery")
+                    ?.classList.remove("vtex-search-result-3-x-gallery-dark");
+                document
+                    .querySelector(".vtex-flex-layout-0-x-flexRowContent--searchInfoBox")
+                    ?.classList.remove(
+                        "vtex-flex-layout-0-x-flexRowContent--searchInfoBox-dark"
+                    );
+                document
+                    .querySelector(".vtex-store-drawer-0-x-drawer--filter-search-test")
+                    ?.classList.remove(
+                        "vtex-store-drawer-0-x-drawer--filter-search-test-dark"
+                    ); //filtros
+                document
+                    .querySelector(
+                        ".vtex-flex-layout-0-x-flexCol--header-desktop-not-home"
+                    )
+                    ?.classList.remove(
+                        "vtex-flex-layout-0-x-flexCol--header-desktop-not-home-dark"
+                    );
+                document
+                    .querySelector(
+                        ".vtex-flex-layout-0-x-flexRowContent--content-row-sabana"
+                    )
+                    ?.classList.remove(
+                        "vtex-flex-layout-0-x-flexRowContent--content-row-sabana-dark"
+                    );
+                document
+                    .querySelector(
+                        ".vtex-flex-layout-0-x-flexRowContent--facilitadores-footer"
+                    )
+                    ?.classList.remove(
+                        "vtex-flex-layout-0-x-flexRowContent--facilitadores-footer-dark"
+                    );
+
+                let classObserve = document.querySelector(
+                    ".vtex-store-footer-2-x-footerLayout"
+                );
+
+                function changeClass(entradas, observador) {
+                    entradas.forEach((entrada) => {
+                        if (entrada.isIntersecting) {
+                            document
+                                .querySelector(
+                                    ".vtex-flex-layout-0-x-flexRowContent--facilitadores-footer"
+                                )
+                                ?.classList.remove(
+                                    "vtex-flex-layout-0-x-flexRowContent--facilitadores-footer-dark"
+                                );
+                        }
+                    });
+                }
+
+                let observer = new IntersectionObserver(changeClass, {
+                    root: null,
+                    rootMargin: "0px 0px 0px 0px",
+                    threshold: 0,
+                });
+
+                observer.observe(classObserve);
+
+                document
+                    .querySelector(
+                        ".vtex-flex-layout-0-x-flexRowContent--container-sabana"
+                    )
+                    ?.classList.remove(
+                        "vtex-flex-layout-0-x-flexRowContent--container-sabana-dark"
+                    );
+                let banner = document.querySelector(
+                    ".vtex-search-2-x-searchBanner--myBanner"
+                );
+                if (banner) {
+                    document
+                        .querySelector(".vtex-search-2-x-searchBanner--myBanner")
+                        ?.classList.remove("vtex-search-2-x-searchBanner--myBanner-dark"); //banner
+                }
+            }
+        });
+
+        if (btnSwitch && localStorage.getItem("dark-mode") === "true") {
+            btnSwitch?.classList.add(
+                "vtex-flex-layout-0-x-flexCol--darkMode-Col-active"
+            );
+            document.querySelector(".vtex-login-2-x-profileIcon").style.color =
+                "#FFFF";
+            document.querySelector(".vtex-store-icons-0-x-cartIcon").style.color =
+                "#FFFF";
+            document
+                .querySelector(".vtex-search-result-3-x-gallery")
+                ?.classList.add("vtex-search-result-3-x-gallery-dark");
+            document
+                .querySelector(".vtex-flex-layout-0-x-flexRowContent--searchInfoBox")
+                ?.classList.add(
+                    "vtex-flex-layout-0-x-flexRowContent--searchInfoBox-dark"
+                );
+            document
+                .querySelector(".vtex-store-drawer-0-x-drawer--filter-search-test")
+                ?.classList.add("vtex-store-drawer-0-x-drawer--filter-search-test-dark"); //filtros
+            document
+                .querySelector(".vtex-flex-layout-0-x-flexCol--header-desktop-not-home")
+                ?.classList.add(
+                    "vtex-flex-layout-0-x-flexCol--header-desktop-not-home-dark"
+                );
+
+            let classObserve = document.querySelector(
+                ".vtex-store-footer-2-x-footerLayout"
+            );
+
+            function changeClass(entradas, observador) {
+                entradas.forEach((entrada) => {
+                    if (entrada.isIntersecting) {
+                        document
+                            .querySelector(
+                                ".vtex-flex-layout-0-x-flexRowContent--facilitadores-footer"
+                            )
+                            ?.classList.add(
+                                "vtex-flex-layout-0-x-flexRowContent--facilitadores-footer-dark"
+                            );
+                    }
+                });
+            }
+
+            let observer = new IntersectionObserver(changeClass, {
+                root: null,
+                rootMargin: "0px 0px 0px 0px",
+                threshold: 0,
+            });
+
+            observer.observe(classObserve);
+
+            document
+                .querySelector(".vtex-flex-layout-0-x-flexRowContent--container-sabana")
+                ?.classList.add(
+                    "vtex-flex-layout-0-x-flexRowContent--container-sabana-dark"
+                );
+            document
+                .querySelector(
+                    ".vtex-flex-layout-0-x-flexRowContent--content-row-sabana"
+                )
+                ?.classList.add(
+                    "vtex-flex-layout-0-x-flexRowContent--content-row-sabana-dark"
+                );
+
+            let banner = document.querySelector(
+                ".vtex-search-2-x-searchBanner--myBanner"
+            );
+            if (banner) {
+                document
+                    .querySelector(".vtex-search-2-x-searchBanner--myBanner")
+                    ?.classList.add("vtex-search-2-x-searchBanner--myBanner-dark"); //banner
+            }
+        } else {
+            if(!btnSwitch) return
+            btnSwitch?.classList.remove(
+                "vtex-flex-layout-0-x-flexCol--darkMode-Col-active"
+            );
+            document.querySelector(".vtex-login-2-x-profileIcon").style.color =
+                "#000";
+            document.querySelector(".vtex-store-icons-0-x-cartIcon").style.color =
+                "#000";
+            document
+                .querySelector(".vtex-search-result-3-x-gallery")
+                ?.classList.remove("vtex-search-result-3-x-gallery-dark");
+            document
+                .querySelector(".vtex-flex-layout-0-x-flexRowContent--searchInfoBox")
+                ?.classList.remove(
+                    "vtex-flex-layout-0-x-flexRowContent--searchInfoBox-dark"
+                );
+            document
+                .querySelector(".vtex-store-drawer-0-x-drawer--filter-search-test")
+                ?.classList.remove(
+                    "vtex-store-drawer-0-x-drawer--filter-search-test-dark"
+                ); //filtros
+            document
+                .querySelector(".vtex-flex-layout-0-x-flexCol--header-desktop-not-home")
+                ?.classList.remove(
+                    "vtex-flex-layout-0-x-flexCol--header-desktop-not-home-dark"
+                );
+            document
+                .querySelector(".vtex-flex-layout-0-x-flexRowContent--container-sabana")
+                ?.classList.remove(
+                    "vtex-flex-layout-0-x-flexRowContent--container-sabana-dark"
+                );
+            document
+                .querySelector(
+                    ".vtex-flex-layout-0-x-flexRowContent--content-row-sabana"
+                )
+                ?.classList.remove(
+                    "vtex-flex-layout-0-x-flexRowContent--content-row-sabana-dark"
+                );
+            document
+                .querySelector(
+                    ".vtex-flex-layout-0-x-flexRowContent--facilitadores-footer"
+                )
+                ?.classList.remove(
+                    "vtex-flex-layout-0-x-flexRowContent--facilitadores-footer-dark"
+                );
+
+            let classObserve = document.querySelector(
+                ".vtex-store-footer-2-x-footerLayout"
+            );
+
+            function changeClass(entradas, observador) {
+                entradas.forEach((entrada) => {
+                    if (entrada.isIntersecting) {
+                        document
+                            .querySelector(
+                                ".vtex-flex-layout-0-x-flexRowContent--facilitadores-footer"
+                            )
+                            ?.classList.remove(
+                                "vtex-flex-layout-0-x-flexRowContent--facilitadores-footer-dark"
+                            );
+                    }
+                });
+            }
+
+            let observer = new IntersectionObserver(changeClass, {
+                root: null,
+                rootMargin: "0px 0px 0px 0px",
+                threshold: 0,
+            });
+
+            observer.observe(classObserve);
+
+            let banner = document.querySelector(
+                ".vtex-search-2-x-searchBanner--myBanner"
+            );
+            if (banner) {
+                document
+                    .querySelector(".vtex-search-2-x-searchBanner--myBanner")
+                    ?.classList.remove("vtex-search-2-x-searchBanner--myBanner-dark"); //banner
+            }
+        }
+    } else {
+        let btnSwitch = document.querySelector(
+            ".vtex-flex-layout-0-x-flexCol--darkMode-Col"
+        );
+
+        btnSwitch && btnSwitch?.addEventListener("click", function (e) {
+            e.stopImmediatePropagation();
+
+            btnSwitch.classList.toggle(
+                "vtex-flex-layout-0-x-flexCol--darkMode-Col-active"
+            );
+
+            if (
+                btnSwitch.classList.contains(
+                    "vtex-flex-layout-0-x-flexCol--darkMode-Col-active"
+                )
+            ) {
+                localStorage.setItem("dark-mode", "true");
+                document
+                    .querySelector(
+                        ".vtex-search-result-3-x-container--layout--container-mobile-all"
+                    )
+                    .classList.toggle(
+                        "vtex-search-result-3-x-container--layout--container-mobile-all-dark"
+                    );
+                document
+                    .querySelector(
+                        ".vtex-flex-layout-0-x-flexRowContent--main-header-mobile"
+                    )
+                    .classList.toggle(
+                        "vtex-flex-layout-0-x-flexRowContent--main-header-mobile-dark"
+                    );
+                document
+                    .querySelector(".vtex-search-result-3-x-accordionFilter")
+                    .classList.toggle("vtex-search-result-3-x-accordionFilter-dark");
+                document
+                    .querySelector(".vtex-search-result-3-x-filterButtonsBox")
+                    .classList.toggle("vtex-search-result-3-x-filterButtonsBox-dark");
+                document
+                    .querySelector(".vtex-search-result-3-x-closeIconButton")
+                    .classList.toggle("vtex-search-result-3-x-closeIconButton-darkmode");
+                document
+                    .querySelector(
+                        ".vtex-store-footer-2-x-footerLayout--container-footer-mobile"
+                    )
+                    .classList.toggle(
+                        "vtex-store-footer-2-x-footerLayout--container-footer-mobile-dark"
+                    );
+            } else {
+                localStorage.setItem("dark-mode", "false");
+                document
+                    .querySelector(
+                        ".vtex-search-result-3-x-container--layout--container-mobile-all"
+                    )
+                    ?.classList.remove(
+                        "vtex-search-result-3-x-container--layout--container-mobile-all-dark"
+                    );
+                document
+                    .querySelector(
+                        ".vtex-flex-layout-0-x-flexRowContent--main-header-mobile"
+                    )
+                    ?.classList.remove(
+                        "vtex-flex-layout-0-x-flexRowContent--main-header-mobile-dark"
+                    );
+                document
+                    .querySelector(".vtex-search-result-3-x-accordionFilter")
+                    ?.classList.remove("vtex-search-result-3-x-accordionFilter-dark");
+                document
+                    .querySelector(".vtex-search-result-3-x-filterButtonsBox")
+                    ?.classList.remove("vtex-search-result-3-x-filterButtonsBox-dark");
+                document
+                    .querySelector(".vtex-search-result-3-x-closeIconButton")
+                    ?.classList.remove("vtex-search-result-3-x-closeIconButton-darkmode");
+                document
+                    .querySelector(
+                        ".vtex-store-footer-2-x-footerLayout--container-footer-mobile"
+                    )
+                    ?.classList.remove(
+                        "vtex-store-footer-2-x-footerLayout--container-footer-mobile-dark"
+                    );
+            }
+        });
+
+        if (localStorage.getItem("dark-mode") === "true") {
+            btnSwitch?.classList.add(
+                "vtex-flex-layout-0-x-flexCol--darkMode-Col-active"
+            );
+            document
+                .querySelector(
+                    ".vtex-search-result-3-x-container--layout--container-mobile-all"
+                )
+                ?.classList.add(
+                    "vtex-search-result-3-x-container--layout--container-mobile-all-dark"
+                );
+            document
+                .querySelector(
+                    ".vtex-flex-layout-0-x-flexRowContent--main-header-mobile"
+                )
+                ?.classList.add(
+                    "vtex-flex-layout-0-x-flexRowContent--main-header-mobile-dark"
+                );
+            document
+                .querySelector(".vtex-search-result-3-x-accordionFilter")
+                ?.classList.add("vtex-search-result-3-x-accordionFilter-dark");
+            document
+                .querySelector(".vtex-search-result-3-x-filterButtonsBox")
+                ?.classList.add("vtex-search-result-3-x-filterButtonsBox-dark");
+            document
+                .querySelector(".vtex-search-result-3-x-closeIconButton")
+                ?.classList.add("vtex-search-result-3-x-closeIconButton-darkmode");
+            document
+                .querySelector(
+                    ".vtex-store-footer-2-x-footerLayout--container-footer-mobile"
+                )
+                ?.classList.add(
+                    "vtex-store-footer-2-x-footerLayout--container-footer-mobile-dark"
+                );
+        } else {
+            btnSwitch?.classList.remove(
+                "vtex-flex-layout-0-x-flexCol--darkMode-Col-active"
+            );
+            document
+                .querySelector(
+                    ".vtex-search-result-3-x-container--layout--container-mobile-all"
+                )
+                ?.classList.remove(
+                    "vtex-search-result-3-x-container--layout--container-mobile-all-dark"
+                );
+            document
+                .querySelector(
+                    ".vtex-flex-layout-0-x-flexRowContent--main-header-mobile"
+                )
+                ?.classList.remove(
+                    "vtex-flex-layout-0-x-flexRowContent--main-header-mobile-dark"
+                );
+            document
+                .querySelector(".vtex-search-result-3-x-accordionFilter")
+                ?.classList.remove("vtex-search-result-3-x-accordionFilter-dark");
+            document
+                .querySelector(".vtex-search-result-3-x-filterButtonsBox")
+                ?.classList.remove("vtex-search-result-3-x-filterButtonsBox-dark");
+            document
+                .querySelector(".vtex-search-result-3-x-closeIconButton")
+                ?.classList.remove("vtex-search-result-3-x-closeIconButton-darkmode");
+            document
+                .querySelector(
+                    ".vtex-store-footer-2-x-footerLayout--container-footer-mobile"
+                )
+                ?.classList.remove(
+                    "vtex-store-footer-2-x-footerLayout--container-footer-mobile-dark"
+                );
+        }
+    }
+}, 800);
+//FIN DE SABANA DARKMODE PARA DESKTOP Y MOBILE

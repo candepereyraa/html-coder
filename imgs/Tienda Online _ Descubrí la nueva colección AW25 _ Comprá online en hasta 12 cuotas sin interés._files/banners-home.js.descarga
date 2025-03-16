@@ -1,0 +1,27 @@
+setInterval(() => {
+    if (window.location.pathname == '/'){
+        let getBanners = document.querySelectorAll(".street47-vertical-slider-pow-0-x-Slide--vertical-container");
+
+        if(getBanners){
+
+            //////////////////// PARA TENER EN CUENTA (1): ////////////////////
+            // SE DEBE DEJAR COMENTADO EL BLOQUE QUE SE DESEA VISUALIZAR
+            // SE DEBEN DEJAR DESCOMENTADOS LOS BLOQUES A OCULTAR
+            //////////////////////////////////////////////////////////////
+
+            document.querySelector('.vtex-flex-layout-0-x-flexRow--vertical-slider-3').style = 'display:none';  //SLIDER CON BANNERS DE 3
+            // document.querySelector('.vtex-flex-layout-0-x-flexRow--vertical-slider-4').style = 'display:none';  //SLIDER CON BANNERS DE 4
+            document.querySelector('.vtex-flex-layout-0-x-flexRow--vertical-slider-5').style = 'display:none';  //SLIDER CON BANNERS DE 5
+
+            //////////////////// PARA TENER EN CUENTA (2): ////////////////////
+            // SE DEBEN COMENTAR LOS BLOQUES QUE NO SE VAN A UTILIZAR 
+            // PARA EVITAR QUE SEAN PRECARGADOS ANTES QUE EL 
+            // SELECCIONADO EN EL PUNTO ANTERIOR
+            //////////////////////////////////////////////////////////////
+            
+            // document.querySelector('.vtex-flex-layout-0-x-flexRow--vertical-slider-3').style = 'visibility:visible !important';  //SLIDER CON BANNERS DE 3
+            document.querySelector('.vtex-flex-layout-0-x-flexRow--vertical-slider-4').style = 'visibility:visible !important';  //SLIDER CON BANNERS DE 4
+            // document.querySelector('.vtex-flex-layout-0-x-flexRow--vertical-slider-5').style = 'visibility:visible !important';  //SLIDER CON BANNERS DE 5
+        }
+    }
+}, 100)

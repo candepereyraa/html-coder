@@ -1,0 +1,223 @@
+.titulo {
+  text-align: center;
+  font-size: 70px;
+  color: #f6f6f6;
+  text-decoration: underline;
+}
+
+header {
+background-color: #e3abe085;
+display: flex;
+gap: 20px;
+font-family: "Markazi Text", serif;
+}
+
+.header-index{
+  background-color: #000000;
+  display: flex;
+  gap: 20px;
+  font-family: "Markazi Text", serif;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* El body ocupa al menos el 100% de la pantalla */
+  margin: 0;
+  background-color: rgb(245, 219, 241);
+  font-family: "Markazi Text", serif;
+  overflow-x: hidden;
+}
+
+.parrafo-index {
+  font-size: 40px;
+  color: #f08beb85;
+ 
+}
+.parrafo-contacto {
+  text-align: center;
+  font-size: 50px;
+  margin: 20px;
+  
+}
+.parrafo-contacto2 {
+  margin: 100px;
+}
+
+.mensaje-contacto {
+  text-align: center;
+  font-size: 40px;
+}
+
+.ropa-index {
+  display: flex;
+  font-size: 20px;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.short-sale {
+  font-size: 30px;
+}
+.accesorios {
+  display: grid;
+  gap: 20px; /* Espacio entre elementos */
+  margin: auto; /* Centra el grid */
+  padding: 20px;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  justify-content: center;
+  font-size: 20px;
+}
+.accesorios article {
+  display: flex; /* Hace que los elementos internos se ajusten correctamente */
+  flex-direction: column; /* Evita que la imagen y el texto se acomoden mal */
+  align-items: center; /* Centra el contenido */
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  justify-content: flex-end;
+}
+.accesorios img {
+  object-fit: contain;
+  border-radius: 10px;
+}
+.ropa-colection {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  font-size: 20px;
+  padding: 20px;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+}
+.ropa-colection article {
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 10px;
+}
+.ropa-colection img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.carrito-accesorios {
+  padding: 1px 100px;
+
+  display: flex;
+  text-align: center;
+  color: black;
+  font-size: 30px;
+  background-color: #f08beb85;
+}
+.more-container {
+  padding: 4px;
+
+  display: flex;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-weight: px;
+  background-color: #ecc3ea85;
+  flex-direction: column;
+  text-decoration: none;
+}
+.card {
+  border: 1px solid;
+  padding: 5px;
+}
+
+footer {
+  background-color: #ecc3ea85;
+}
+
+nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+/*movil*/
+@media (min-width: 480px) {
+  body {
+    background-color: rgb(253, 219, 250);
+    font-size: 16px;
+    padding: 10px;
+  }
+  .ropa-colection {
+    grid-template-columns: repeat(1, 1fr); /* 1 columna por fila */
+  }
+ 
+  header,
+  main,
+  footer {
+    justify-content: space-between;
+  }
+}
+
+/*tablet*/
+@media (min-width: 600px) {
+  body {
+    background-color: rgb(134, 83, 97);
+    font-size: 18px;
+    padding: 20px;
+  }
+  .ropa-colection {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas por fila */
+  }
+
+  
+  header,
+  main,
+  footer {
+    justify-content: space-between;
+  }
+}
+/* Media query para computadoras de escritorio */
+@media (min-width: 1024px) {
+  body {
+    background-color: rgb(241, 220, 240);
+    height: auto;
+  }
+  .ropa-colection {
+    grid-template-columns: repeat(4, 1fr); /* 2 columnas por fila */
+  }
+  
+  header,
+  main,
+  footer {
+    justify-content: space-between;
+  }
+}
+
+.bg-body-tertiary {
+  --bs-bg-opacity: 1;
+  background-color: palevioletred;
+}
+a:link {
+  color: rgb(248, 242, 242);
+}
+.navbar navbar-expand-lg {
+  position: relative;
+}
+
+.img-fluid:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+}
+.accordion-button {
+  background-color: rgb(253, 226, 247);
+  font-family: "Markazi Text", serif;
+}
+.nav-link{
+  padding: 20px;
+}
+
+
