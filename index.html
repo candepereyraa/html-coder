@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>tienda online</title>
-  <!-- Fuentes de Google -->
+  <title>waldorf - tienda online de ropa y accesorios</title>
+  <meta name="description"
+    content="tienda online de ropa con estilo y calidad. Encontrá las últimas tendencias, looks únicos y con elegancia desde casa. Envíos a todo el país" />
+  <meta name="keywords" content="ropa,moda,compras,accesorios,tendencia,estilo,outfits" />
+ <!-- fuente google -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet" />
@@ -13,197 +16,298 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     crossorigin="anonymous" />
   <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="style.css" />
-
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 
 <body class="body">
-  <!-- Encabezado -->
-  <header>
-    <div class="container d-flex justify-content-between align-items-center">
-      <h1 class="titulo">waldorf</h1>
-      <nav>
-        <ul class="nav nav-underline">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/finalsale.html">final sale</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/colection.html">collection 25</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/accesorios.html">accesorios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/calzado.html">calzado</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/contacto.html">contacto</a>
-          </li>
-        </ul>
+  <div data-aos="fade-up">
+    <!-- Encabezado -->
+    <header class="header2">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="titulo-menu">
+          <h1 class="titulo">waldorf</h1>
+        </div>
+        <nav>
+          <div class="menu1">
+            <!-- menu identico en todas las seccion-->
+            <ul class="nav nav-underline">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/finalsale.html">final sale</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/colection.html">collection 25</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/accesorios.html">accesorios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/sobrenosotros.html">sobre nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/contacto.html">contacto</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="carrito-menu">
+          <a class="nav-link" href="carrito.html">
+            <img src="assets/imgs/cart.svg" alt="icono carrito" width="30" height="30" />
+          </a>
+        </div>
+      </div>
+      <!-- menu hamburguesa-->
+      <nav class="navbar">
+        <div class="menu">
+          <div class="container-fluid">
+            <a class="titulo" href="#">waldorf</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                  waldorf
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/finalsale.html">final sale</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/colection.html">collection 25</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/accesorios.html">accesorios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/sobrenosotros.html">sobre nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/contacto.html">contacto</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
-      <a class="nav-link" href="carrito.html">
-        <img src="assets/imgs/cart.svg" alt="carrito" width="30" height="30" />
-      </a>
+    </header>
+
+    <!-- Carrusel -->
+    <div class="container-fluid px-0">
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/imgs/501.png" class="d-block w-100" alt="chica posando" />
+          </div>
+          <div class="carousel-item">
+            <img src="assets/imgs/500.png" class="d-block w-100" alt="foto con texto sale" />
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
     </div>
-  </header>
 
-  <!-- Carrusel -->
-  <div class="container-fluid px-0">
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="assets/imgs/501.png" class="d-block w-100" alt="foto1" />
-        
-        </div>
-        <div class="carousel-item">
-          <img src="assets/imgs/500.png" class="d-block w-100" alt="foto2" />
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-    </div>
-  </div>
-
-  <!-- Sección de productos -->
-  <main class="ropa-index">
-    <section>
-      <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-3">
-          <article class="text-center">
-            <img class="img-fluid" src="assets/imgs/471.2.png" alt="buzo rojo y negro" />
-            <h4>buzos</h4>
-          </article>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3">
-          <article class="text-center">
-            <img class="img-fluid" src="assets/imgs/472.2.png" alt="remera blanca" />
-            <h4>remeras</h4>
-          </article>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3">
-          <article class="text-center">
-            <img class="img-fluid" src="assets/imgs/473.2.png" alt="jean negro con rojo" />
-            <h4>jeans</h4>
-          </article>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3">
-          <article class="text-center">
-            <img class="img-fluid" src="assets/imgs/474.png" alt="vestido negro" />
-            <h4>vestidos</h4>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="accordion" id="accordionExample">
-      <!-- Sección sobre nosotros,cambios y envios -->
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-            aria-expanded="true" aria-controls="collapseOne">
-            Sobre Nosotros
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>bienvenidos a Waldorf,</strong> tu destino online para
-            descubrir moda única y atemporal. en nuestra tienda, creemos que
-            cada prenda es una forma de expresión y una oportunidad para
-            contar tu propia historia. Por eso, nos dedicamos a ofrecer
-            colecciones exclusivas, seleccionadas cuidadosamente para que
-            puedas encontrar ese toque especial que realce tu estilo personal.
-            por ello, hemos creado una plataforma fácil de usar, segura y
-            adaptada a tus necesidades, garantizando que cada visita a nuestra
-            tienda sea tan inspiradora como placentera.en Waldorf, cada
-            detalle cuenta, y trabajamos día a día para ofrecerte productos de
-            calidad y un servicio que te haga sentir único. ¡Bienvenido a un
-            mundo donde el estilo y la autenticidad se unen para crear algo
-            verdaderamente especial!
+    <!-- Sección de productos -->
+    <main class="ropa-index">
+      <section class="container mt-5">
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="text-center">
+              <!-- animacion en las imagenes -->
+              <div data-aos="fade-up">
+                <img class="img-fluid" src="assets/imgs/471.2.png" alt="buzo rojo y negro" />
+              </div>
+              <h4>buzos</h4>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="text-center">
+              <div data-aos="fade-up">
+                <img class="img-fluid" src="assets/imgs/472.2.png" alt="remera blanca" />
+              </div>
+              <h4>remeras</h4>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="text-center">
+              <div data-aos="fade-up">
+                <img class="img-fluid" src="assets/imgs/473.2.png" alt="jean negro con rojo" />
+              </div>
+              <h4>jeans</h4>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="text-center">
+              <div data-aos="fade-up">
+                <img class="img-fluid" src="assets/imgs/474.png" alt="vestido negro" />
+              </div>
+              <h4>vestidos</h4>
+            </article>
           </div>
         </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            cambios y devoluciones
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>¿como puedo hacer el cambio de una compra online?</strong>
-          </div>
-          <div class="accordion-body">
-            si realizaste una compra en nuestra web, podrás hacer el cambio
-            online contactando a nuestro Centro de atención al cliente o en
-            nuestros locales habilitados
-          </div>
-          <div class="accordion-body">
-            tené en cuenta que siempre se tomará el precio abonado al momento
-            de la compra. Para poder avanzar con el cambio debes cumplir con
-            las siguientes condiciones:
-            <div>
-              1- El artículo debe estar sin uso y con la etiqueta colocada.
+      </section>
+      <!-- imagen descarga nuestra app -->
+      <section class="py-5 my-5">
+        <div class="container-fluid">
+  
+          <div class="mi-warning" style="background-image: url('images/bg-pattern-2.png') no-repeat;">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="../assets/imgs/iconocelular.png" alt="phone" class="image-float img-fluid">
+                </div>
+                <div class="col-md-8">
+                  <h2 class="subtitulo">descarga nuestra app</h2>
+                  <p class=>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sed ptibus liberolectus nonet psryroin. Amet sed lorem posuere sit iaculis amet, ac urna. Adipiscing fames semper erat ac in suspendisse iaculis. Amet blandit tortor praesent ante vitae. A, enim pretiummi senectus magna. Sagittis sed ptibus liberolectus non et psryroin.</p>
+                  <div class="d-flex gap-2 flex-wrap">
+                    <img src="../assets/imgs/app-store.jpg" alt="app-store">
+                    <img src="../assets/imgs/google-play.jpg" alt="google-play">
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              2- no deben haber pasado más de 30 días desde la fecha de
-              recepción del pedido.
+          </div>
+          
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container text-center">
+        <div class="row">
+          <!-- iconos con animacion y flex -->
+          <div class="col-12 col-md-4 d-flex flex-column align-items-center mb-3 mb-md-0">
+            <div data-aos="fade-right" data-aos-delay="0" data-aos-easing="ease-in-sine">
+              <img src="assets/imgs/tarjeta2.png" width="75" style="height: 75px; object-fit: contain"
+                alt="icono tarjeta" />
+              <p class="mt-2">Paga hasta 12 cuotas sin interés</p>
             </div>
-            <div>3- tener a mano tu número de pedido 🙏</div>
-            <div>
-              4- podés elegir cualquier otro producto para el cambio ♥
+          </div>
+          <!-- Columna 2 -->
+          <div class="col-12 col-md-4 d-flex flex-column align-items-center mb-3 mb-md-0">
+            <div data-aos="fade-right" data-aos-delay="300" data-aos-easing="ease-in-sine">
+              <img src="assets/imgs/camion.icono.png" width="75" style="height: 75px; object-fit: contain"
+                alt="icono camion" />
+              <p class="mt-2">Envío gratis superando los $150.000</p>
+            </div>
+          </div>
+          <!-- Columna 3 -->
+          <div class="col-12 col-md-4 d-flex flex-column align-items-center">
+            <div data-aos="fade-right" data-aos-delay="600" data-aos-easing="ease-in-sine">
+              <img src="assets/imgs/devolucion.png" width="75" style="height: 75px; object-fit: contain"
+                alt="icono flechas" />
+              <p class="mt-2">Cambio y devoluciones</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            envío y seguimiento
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>¿cuál es el costo de envío?.</strong>
+
+      <!-- Sección de Acordion -->
+      <div class="accordion" id="accordionExample">
+        <!-- Cambios y devoluciones -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Cambios y devoluciones
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              El costo depende del código postal del domicilio de entrega y se
-              detallara en el check out de tu compra una vez que hayas
-              completado los datos de tu domicilio. Si tu compra supera los
-              $150.000 tenes envío gratis 🚚
-              <div>¿en cuánto tiempo voy a recibir mi pedido?</div>
-              <div>
-                Esto va a depender de la localidad donde se deba hacer la
-                entrega y el método de envio seleccionado.
-              </div>
-              <div>
-                En el check out, una vez que selecciones como deseas recibir
-                tu pedido, podrás ver el tiempo estimado de entrega.
-              </div>
-              <div>
-                Recorda que los tiempos de entrega pueden verse afectados por
+              <p>
+                <strong>¿Cómo puedo hacer el cambio de una compra online?</strong>
+              </p>
+              <p>
+                Si realizaste una compra en nuestra web, podrás hacer el
+                cambio online contactando a nuestro Centro de atención al
+                cliente o en nuestros locales habilitados.
+              </p>
+              <p>
+                Tené en cuenta que siempre se tomará el precio abonado al
+                momento de la compra. Para poder avanzar con el cambio debes
+                cumplir con las siguientes condiciones:
+              </p>
+              <ul>
+                <li>
+                  El artículo debe estar sin uso y con la etiqueta colocada.
+                </li>
+                <li>
+                  No deben haber pasado más de 30 días desde la fecha de
+                  recepción del pedido.
+                </li>
+                <li>Tener a mano tu número de pedido 🙏</li>
+                <li>Podés elegir cualquier otro producto para el cambio ♥</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Envío y seguimiento -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Envío y seguimiento
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>¿Cuál es el costo de envío?</strong>
+              <p>
+                El costo depende del código postal del domicilio de entrega y
+                se detallará en el checkout de tu compra una vez que hayas
+                completado los datos de tu domicilio. Si tu compra supera los
+                $150.000 tienes envío gratis 🚚
+              </p>
+              <p>
+                ¿En cuánto tiempo voy a recibir mi pedido? Esto va a depender
+                de la localidad donde se deba hacer la entrega y el método de
+                envío seleccionado.
+              </p>
+              <p>
+                En el checkout, una vez que selecciones cómo deseas recibir tu
+                pedido, podrás ver el tiempo estimado de entrega.
+              </p>
+              <p>
+                Recuerda que los tiempos de entrega pueden verse afectados por
                 demoras ajenas a la empresa.
-              </div>
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <label for="mensaje">todos los derechos reservados</label>
-    <p>© 2024 waldorf</p>
-  </footer>
 
+      <!-- Derechos reservados -->
+      <div class="text-center mt-3">
+        <small>Todos los derechos reservados © 2024 Waldorf</small>
+      </div>
+    </footer>
+  </div>
   <!-- Scripts de Bootstrap -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous"></script>
 </body>

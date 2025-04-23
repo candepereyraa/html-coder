@@ -1,0 +1,22 @@
+@mixin titulo($size, $color) {
+    text-align: center;
+    font-size: $size;  // Usa el parámetro $size
+    color: $color;     // Usa el parámetro $color
+    font-family: "Markazi Text", serif;
+  }
+  
+ 
+  .titulo {
+    @include titulo(70px, #f6f6f6);  
+  }
+  
+  .subtitulo {
+    @include titulo(50px, #ffffff);  
+  }
+
+  .texto-p {
+    @include titulo (15px,#ffffff)
+  }
+  .nombres {
+    @include titulo (25px,#fffefe)
+  }

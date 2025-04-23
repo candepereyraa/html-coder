@@ -1,0 +1,33 @@
+@use '../abstracts/variables' as v;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: v.$color-primario;
+  overflow-x: hidden;
+  padding-right: 0 !important;
+
+  &.offcanvas-backdrop {
+    padding-right: 0;
+  }
+}
+
+header {
+  &.header-index {
+    background-color: v.$color-header;
+  }
+
+  &.header-contacto {
+    display: flex;
+    gap: 300px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+  }
+}
+
+.nav-link {
+  color: v.$color-nav;
+}

@@ -1,0 +1,65 @@
+// uso de nesting
+.ropa-index,
+.ropa-colection,
+.accesorios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  article {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+  }
+
+  &.accesorios {
+    img {
+      object-fit: contain;
+      border-radius: 10px;
+    }
+  }
+}
+
+.carrito-accesorios,
+.more-container {
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  background-color: rgba(236, 195, 234, 0.5215686275);
+}
+
+.img-fluid {
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+}
+.parrafo-index {
+    font-size: 40px;
+    color: #f5c5f1;
+  }
+
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+    justify-items: center;
+   
+    img {
+      max-width: 100%;
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+    }
+  
+    .more-container {
+      width: 50%;
+      border-radius: 10px;
+    }
+  }
