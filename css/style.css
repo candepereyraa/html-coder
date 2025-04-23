@@ -2,15 +2,14 @@
   text-align: center;
   font-size: 70px;
   color: #f6f6f6;
-  text-decoration: underline;
   font-family: "Markazi Text", serif;
+  text-decoration: underline;
 }
 
 .subtitulo {
   text-align: center;
   font-size: 50px;
   color: #ffffff;
-  text-decoration: underline;
   font-family: "Markazi Text", serif;
 }
 
@@ -18,14 +17,13 @@
   text-align: center;
   font-size: 15px;
   color: #ffffff;
-  text-decoration: underline;
   font-family: "Markazi Text", serif;
 }
+
 .nombres {
   text-align: center;
   font-size: 25px;
   color: #fffefe;
-  text-decoration: underline;
   font-family: "Markazi Text", serif;
 }
 
@@ -45,7 +43,6 @@
   text-align: center;
   font-size: 70px;
   color: #f6f6f6;
-  text-decoration: underline;
   font-family: "Markazi Text", serif;
 }
 
@@ -53,7 +50,6 @@
   text-align: center;
   font-size: 50px;
   color: #ffffff;
-  text-decoration: underline;
   font-family: "Markazi Text", serif;
 }
 
@@ -61,7 +57,6 @@
   text-align: center;
   font-size: 15px;
   color: #ffffff;
-  text-decoration: underline;
   font-family: "Markazi Text", serif;
 }
 
@@ -69,7 +64,6 @@
   text-align: center;
   font-size: 25px;
   color: #fffefe;
-  text-decoration: underline;
   font-family: "Markazi Text", serif;
 }
 
@@ -122,6 +116,10 @@ header.header-contacto {
   body.offcanvas-backdrop {
     background-color: rgb(252, 215, 246);
   }
+  .mi-warning {
+    --bs-bg-opacity: 1;
+    background-color: rgb(254, 243, 254);
+  }
 }
 @media (min-width: 600px) {
   body {
@@ -141,6 +139,10 @@ header.header-contacto {
   body.offcanvas-backdrop {
     background-color: rgb(134, 83, 97);
   }
+  .mi-warning {
+    --bs-bg-opacity: 1;
+    background-color: rgb(84, 54, 63);
+  }
 }
 @media (min-width: 1024px) {
   body {
@@ -159,10 +161,14 @@ header.header-contacto {
   body.offcanvas-backdrop {
     background-color: rgb(123, 105, 121);
   }
+  .mi-warning {
+    --bs-bg-opacity: 1;
+    background-color: rgb(183, 173, 182);
+  }
 }
 @media (min-width: 280px) {
   body {
-    background-color: rgb(255, 231, 253);
+    background-color: rgb(255, 213, 251);
     font-size: 16px;
     padding-right: 0%;
   }
@@ -198,9 +204,6 @@ header.header-contacto {
   }
   body.offcanvas-backdrop {
     background-color: rgb(134, 83, 97);
-  }
-  .container-flex {
-    flex-direction: row; /* ejemplo: layout horizontal */
   }
 }
 @media (min-width: 1024px) {
@@ -274,8 +277,27 @@ header.header-contacto {
   font-size: 40px;
   color: #f5c5f1;
 }
-.grid-destacados {
-  padding: 2rem 0;
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+  justify-items: center;
+}
+.galeria div {
+  width: 100%;
+}
+.galeria img {
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+.galeria .more-container {
+  width: 50%;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
